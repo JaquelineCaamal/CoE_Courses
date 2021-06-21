@@ -9,7 +9,18 @@ function sumCurry(a) {
 
 sumCurry(1)(2)(3);
 
+// Currying Bianca explanation
+// Is when you create a function that can then later be called multiple times with different arguments
+const curry = (fn) => {
+  return (arg) => {
+    return (arg2) => {
+      return fn(arg, arg2);
+    };
+  };
+};
+
 // Implement your own compose function
+// Is about creating small functions and creating bigger and more complete functions with them
 const _ = {};
 _.compose = (...functionsArgs) => {
   console.log("0", ...functionsArgs);
